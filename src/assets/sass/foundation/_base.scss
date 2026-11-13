@@ -1,0 +1,22 @@
+@use "../global" as g;
+
+body {
+  color: g.$black;
+  font-family: g.$ff-jp;
+  font-weight: 400;
+  line-height: 1;
+  font-style: normal;
+
+  &.is-no-scroll {
+    overflow: hidden;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  display: inline-block;
+}

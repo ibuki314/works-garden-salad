@@ -1,0 +1,134 @@
+@use "../global" as g;
+
+.p-privacy {
+  position: fixed;
+  inset: 0;
+  transform: translateY(100%);
+  z-index: map-get(g.$z-index, modal);
+  background: g.$white;
+  transition: transform g.$duration g.$timing;
+  border-radius: 12px 12px 0 0;
+  background: #fff;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
+  visibility: hidden;
+
+  @include g.mq(md) {
+    margin: 0 auto;
+    width: calc(1080 / 1440 * 100%);
+    max-width: 1080px;
+  }
+}
+
+.p-privacy__btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  z-index: map-get(g.$z-index, modal);
+  transition: bottom g.$duration g.$timing;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 25px;
+    height: 1px;
+    border-radius: calc(infinity * 1px);
+    background: g.$black;
+  }
+
+  &::before {
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translateX(-50%) rotate(-45deg);
+  }
+}
+
+.p-privacy__draggadle {
+  width: 100%;
+  height: 35px;
+  z-index: map-get(g.$z-index, modal);
+  transition: bottom g.$duration g.$timing;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 4px;
+    border-radius: calc(infinity * 1px);
+    background: rgba(15, 15, 15, 0.15);
+  }
+
+  @media (hover: hover) {
+    visibility: hidden;
+  }
+}
+
+.p-privacy__inner {
+  margin: 0 auto;
+  width: calc(343 / 375 * 100%);
+  display: grid;
+  grid-template-rows: 79px 1fr;
+  gap: 21px;
+  height: calc(78% - 35px);
+
+  @include g.mq(xl) {
+    grid-template-rows: 112px 1fr;
+  }
+}
+
+.p-privacy__body {
+  overflow-y: auto;
+  height: 100%;
+  padding-bottom: 35px;
+
+  h2 {
+    margin: 27px 0 9px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  p,
+  li {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  li {
+    margin-left: 18px;
+  }
+
+  ul {
+    li {
+      list-style-type: disc;
+
+      &:not(:first-child) {
+        margin-top: 2px;
+      }
+    }
+  }
+
+  ol {
+    li {
+      list-style-type: decimal;
+
+      &:not(:first-child) {
+        margin-top: 4px;
+      }
+    }
+  }
+
+  ul,
+  ol {
+    margin: 8px 0;
+  }
+}

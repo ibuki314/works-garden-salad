@@ -1,0 +1,104 @@
+@use "../global" as g;
+
+.p-concept {
+  padding: 48px 0 64px;
+  background: g.$c-ba;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+
+  @include g.mq(xl) {
+    padding: 121px 0 110px;
+  }
+
+  &::before {
+    content: "Garden\ASalad";
+    white-space: pre;
+    position: absolute;
+    bottom: -8px;
+    left: calc(50% - 187.5px);
+    color: rgba(103, 103, 103, 0.3);
+    text-align: right;
+    font-family: g.$ff-en;
+    font-size: 110px;
+    line-height: 0.8;
+    letter-spacing: 3.3px;
+
+    @include g.mq(md) {
+      content: "Garden Salad";
+      left: calc(50% - 408px);
+      font-size: 143px;
+    }
+
+    @include g.mq(lg) {
+      left: calc(50% - 522px);
+      font-size: 185px;
+    }
+
+    @include g.mq(xl) {
+      left: calc(50% - 626px);
+      font-size: 223px;
+    }
+
+    @include g.mq(xxl) {
+      font-size: 280px;
+      line-height: 1;
+      left: calc(50% - 763px);
+      bottom: -40px;
+      letter-spacing: 0;
+    }
+  }
+}
+
+.p-concept__inner {
+  margin: 0 auto;
+
+  @include g.mq(sp) {
+    width: calc(310 / 375 * 100%);
+    max-width: 493px;
+  }
+}
+
+.p-concept__heading {
+  color: g.$white;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 1px;
+
+  @include g.mq(xl) {
+    font-size: 30px;
+    letter-spacing: 1.5px;
+  }
+}
+
+.p-concept__body-wrap {
+  margin-top: 24px;
+
+  @include g.mq(xl) {
+    margin-top: 47px;
+  }
+}
+
+.p-concept__body {
+}
+
+.p-concept__body__text {
+  color: g.$white;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.48px;
+
+  @include g.mq(xl) {
+    font-size: 18px;
+    letter-spacing: 0.54px;
+  }
+
+  &:not(:first-child) {
+    margin-top: 24px;
+
+    @include g.mq(xl) {
+      margin-top: 27px;
+    }
+  }
+}

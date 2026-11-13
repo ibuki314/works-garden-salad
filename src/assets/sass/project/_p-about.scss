@@ -1,0 +1,154 @@
+@use "../global" as g;
+
+.p-about {
+  padding: 67px 0;
+  background: g.$c-ma;
+
+  @include g.mq(xl) {
+    padding: 134px 0 150px;
+  }
+}
+
+.p-about__inner {
+  width: calc(1080 / 1440 * 100%);
+  max-width: 600px;
+
+  @include g.mq(xl) {
+    max-width: 1080px;
+  }
+}
+
+.p-about__cards-wrap {
+  margin-top: 56px;
+
+  @include g.mq(xl) {
+    margin-top: 80px;
+  }
+}
+
+.p-about__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+
+  @include g.mq(xl) {
+    gap: 64px;
+  }
+}
+
+.p-about__card {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @include g.mq(xl) {
+    position: relative;
+    z-index: 1;
+    flex-direction: row-reverse;
+    justify-content: start;
+    align-items: center;
+    gap: 67px;
+
+    &:nth-child(2) {
+      flex-direction: row;
+      justify-content: space-between;
+
+      .p-about__card__numbar {
+        right: calc(523 / 1080 * 100%);
+      }
+    }
+  }
+}
+
+.p-about__card__container {
+  position: relative;
+  z-index: 1;
+
+  @include g.mq(xl) {
+    position: static;
+  }
+}
+
+.p-about__card__numbar {
+  position: absolute;
+  bottom: -57px;
+  right: -9px;
+  color: rgba(255, 255, 255, 0.8);
+  z-index: -1;
+  font-family: g.$ff-en;
+  font-size: 180px;
+  text-align: justify;
+  width: 207px;
+
+  @include g.mq(xl) {
+    bottom: 50%;
+    right: 0;
+    transform: translateY(50%);
+    font-size: 288px;
+    width: 322px;
+  }
+}
+
+.p-about__card__heading-wrap {
+  margin-right: -15px;
+
+  @include g.mq(md) {
+    margin: 0;
+  }
+}
+
+.p-about__card__heading {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: calc(35 / 24);
+  letter-spacing: 1.2px;
+
+  @media not screen and (min-width: 375px) {
+    font-size: 23px;
+  }
+
+  @include g.mq(xl) {
+    font-size: 30px;
+    letter-spacing: 1.5px;
+  }
+}
+
+.p-about__card__heading--highlight {
+  color: g.$c-ac;
+}
+
+.p-about__card__body-wrap {
+  margin-top: 16px;
+
+  @include g.mq(xl) {
+    margin-top: 23px;
+  }
+}
+
+.p-about__card__body {
+  text-align: justify;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.48px;
+
+  @include g.mq(xl) {
+    max-width: 400px;
+    font-size: 18px;
+    letter-spacing: 0.54px;
+  }
+}
+
+.p-about__card__img {
+  position: relative;
+  z-index: 1;
+
+  img {
+    aspect-ratio: 343/220;
+    object-fit: cover;
+
+    @include g.mq(xl) {
+      aspect-ratio: 450/288;
+      max-width: 450px;
+    }
+  }
+}

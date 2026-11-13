@@ -1,0 +1,137 @@
+@use "../global" as g;
+
+.p-footer {
+  padding: 48px 0 10px;
+  text-align: center;
+  background: g.$c-ma;
+
+  @include g.mq(xl) {
+    padding: 56px 0 9px;
+  }
+}
+
+.p-footer__sns {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.p-footer__sns__link {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  aspect-ratio: 1/1;
+  background: g.$c-ba;
+  border-radius: 50%;
+  border: 2px solid g.$c-ba;
+
+  @include g.hover-transition {
+    transition: background-color g.$duration g.$timing;
+  }
+
+  @include g.mq(xl) {
+    width: 40px;
+  }
+
+  @include g.hover-active {
+    background: g.$white;
+
+    path {
+      fill: g.$c-ba;
+    }
+  }
+
+  svg {
+    height: 26px;
+
+    @include g.mq(xl) {
+      height: 20px;
+    }
+  }
+
+  path {
+    @include g.hover-transition {
+      transition: fill g.$duration g.$timing;
+    }
+  }
+}
+
+.p-footer__nav-wrap {
+  margin-top: 42px;
+
+  @include g.mq(xl) {
+    margin-top: 41px;
+  }
+}
+
+.p-footer__nav {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+
+  @include g.mq(xl) {
+    gap: 40px;
+  }
+}
+
+.p-footer__nav__link {
+  font-family: g.$ff-en;
+  font-size: 16px;
+  letter-spacing: 0.48px;
+  position: relative;
+
+  @include g.mq(xl) {
+    font-size: 18px;
+    letter-spacing: 0.54px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: g.$c-ac;
+
+    @include g.mq(xl) {
+      bottom: -7px;
+    }
+
+    @include g.hover-transition {
+      transition: width g.$duration g.$timing;
+    }
+  }
+
+  @include g.hover-active {
+    &::before {
+      width: calc(93 / 96 * 100%);
+    }
+  }
+}
+
+.p-footer__logo-wrap {
+  margin-top: 36px;
+
+  @include g.mq(xl) {
+    margin-top: 39px;
+  }
+}
+
+.p-footer__logo {
+  width: 167px;
+}
+
+.p-footer__copyright-wrap {
+  margin-top: 28px;
+
+  @include g.mq(xl) {
+    margin-top: 19px;
+  }
+}
+
+.p-footer__copyright {
+  font-size: 12px;
+  letter-spacing: 0.36px;
+}

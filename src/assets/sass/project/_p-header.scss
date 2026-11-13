@@ -1,0 +1,97 @@
+@use "../global" as g;
+
+.p-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 60px;
+  background: g.$c-ba;
+  z-index: map-get(g.$z-index, header);
+
+  @include g.mq(xl) {
+    height: 90px;
+  }
+}
+
+.p-header__inner {
+  height: 100%;
+  margin: 0 auto;
+  width: calc(363 / 375 * 100%);
+
+  @include g.mq(xl) {
+    padding-right: calc(39 / 1394 * 100%);
+    width: calc(1394 / 1440 * 100%);
+  }
+}
+
+.p-header__container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.p-header__logo {
+  width: 75px;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  padding: 0 10px;
+
+  @include g.mq(xl) {
+    padding: 0 8px;
+    width: 134px;
+  }
+}
+
+.p-header__nav {
+  height: 100%;
+  display: flex;
+
+  @include g.mq(xl) {
+    gap: 24px;
+  }
+}
+
+.p-header__nav__link {
+  display: grid;
+  align-items: center;
+  padding: 0 10px;
+  height: 100%;
+  color: g.$white;
+  font-family: g.$ff-en;
+  font-size: 14px;
+  letter-spacing: 0.42px;
+  position: relative;
+
+  @include g.mq(xl) {
+    padding: 0 8px;
+    font-size: 18px;
+    letter-spacing: 0.54px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: g.$c-ac;
+
+    @include g.mq(xl) {
+      bottom: 27px;
+    }
+
+    @include g.hover-transition {
+      transition: width g.$duration g.$timing;
+    }
+  }
+
+  @include g.hover-active {
+    &::before {
+      width: calc(93 / 96 * 100%);
+    }
+  }
+}

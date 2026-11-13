@@ -1,0 +1,44 @@
+// Color
+$c-ba: #2f2f2f;
+$c-ma: #f2f2f2;
+$c-ac: #159741;
+$black: #333;
+$white: #fff;
+
+// Font
+$ff-jp: "Noto Sans JP", sans-serif;
+$ff-en: reross-quadratic, sans-serif;
+$ff-ac: "Satisfy", sans-serif;
+
+// transition
+$duration: 220ms;
+$timing: ease;
+
+$breakpoints: (
+  sp: "not screen and (min-width: 576px)",
+  sm: "screen and (min-width:  576px)",
+  md: "screen and (min-width:  768px)",
+  lg: "screen and (min-width:  992px)",
+  xl: "screen and (min-width: 1200px)",
+  xxl: "screen and (min-width: 1400px)",
+) !default;
+
+// $z-index: (
+//   loading: calc(infinity),
+//   modal: calc(infinity - 1),
+//   header: calc(infinity - 2),
+//   drawer: calc(infinity - 3),
+//   floating: calc(infinity - 4),
+//   page-top: calc(infinity - 5),
+//   footer: calc(infinity - 6),
+// ) !default;
+
+$z-index: (
+  loading: calc(99),
+  modal: calc(99 - 1),
+  header: calc(99 - 2),
+  drawer: calc(99 - 3),
+  floating: calc(99 - 4),
+  page-top: calc(99 - 5),
+  footer: calc(99 - 6),
+) !default;

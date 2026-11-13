@@ -1,0 +1,21 @@
+@use "../global" as g;
+
+.p-parallax {
+  height: 250px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include g.mq(xl) {
+    height: 450px;
+  }
+}
+
+.img-bg-1 {
+  background-image: url(../img/parallax-1.avif);
+}
+
+.img-bg-2 {
+  background-image: url(../img/parallax-2.avif);
+}

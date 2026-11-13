@@ -1,0 +1,53 @@
+@use "../global" as g;
+
+.c-head {
+  padding-bottom: 19px;
+  text-align: center;
+  position: relative;
+
+  @include g.mq(xl) {
+    padding-bottom: 26px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: g.$c-ac;
+  }
+}
+
+.c-subheading {
+  color: g.$c-ac;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+
+  @include g.mq(xl) {
+    font-size: 18px;
+    letter-spacing: 0.9px;
+  }
+}
+
+.c-heading-wrap {
+  margin-top: 14px;
+
+  @include g.mq(xl) {
+    margin-top: 20px;
+  }
+}
+
+.c-heading {
+  font-family: g.$ff-en;
+  font-size: 32px;
+  letter-spacing: 1.6px;
+
+  @include g.mq(xl) {
+    font-size: 48px;
+    letter-spacing: 2.4px;
+  }
+}

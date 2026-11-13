@@ -1,0 +1,4 @@
+node_modules/
+.DS_Store
+# reCAPTCHA secret とメールアドレスを含むため除外
+public/submit.php

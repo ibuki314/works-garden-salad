@@ -1,0 +1,404 @@
+@use "../global" as g;
+
+.p-shop {
+  padding: 67px 0 64px;
+
+  @include g.mq(xl) {
+    padding: 121px 0;
+  }
+}
+
+.p-shop__map-wrap {
+  margin-top: 56px;
+  margin: 0 auto;
+
+  @include g.mq(xl) {
+    margin-top: 80px;
+  }
+}
+
+.p-shop__map {
+  height: 250px;
+
+  @include g.mq(xl) {
+    height: 465px;
+  }
+}
+
+.p-shop__info-wrap {
+  margin-top: 53px;
+
+  @include g.mq(xl) {
+    margin-top: 80px;
+  }
+}
+
+.p-shop__info {
+  margin: 0 auto;
+  max-width: 513px;
+
+  @include g.mq(sp) {
+    width: calc(343 / 375 * 100%);
+  }
+
+  @include g.mq(md) {
+    padding-left: calc(50 / 768 * 100%);
+    max-width: 1440px;
+  }
+
+  @include g.mq(xl) {
+    padding-left: calc(184 / 1440 * 100%);
+  }
+
+  @include g.mq(xxl) {
+    padding-left: 180px;
+  }
+}
+
+.p-shop__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 39px;
+  align-items: center;
+
+  @include g.mq(md) {
+    grid-template-columns: 401px 1fr;
+    gap: calc(20 / 718 * 100%);
+  }
+
+  @include g.mq(lg) {
+    gap: calc(131 / 1256 * 100%);
+  }
+
+  @include g.mq(xl) {
+    grid-template-columns: 429px 1fr;
+    gap: calc(131 / 1256 * 100%);
+  }
+}
+
+.p-shop__contents {
+}
+
+.p-shop__name {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: center;
+
+  @include g.mq(md) {
+    flex-direction: row;
+    gap: 0;
+    text-align: left;
+    align-items: baseline;
+  }
+}
+
+.p-shop__name__en {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: baseline;
+  font-family: g.$ff-en;
+
+  @include g.mq(md) {
+    justify-content: start;
+  }
+}
+
+.p-shop__name__en__small {
+  font-size: 18px;
+}
+
+.p-shop__name__en__large {
+  font-size: 32px;
+  letter-spacing: 0.96px;
+}
+
+.p-shop__name__jp {
+  font-size: 16px;
+  letter-spacing: 0.48px;
+
+  @include g.mq(xl) {
+    font-size: 18px;
+    letter-spacing: 0.54px;
+  }
+}
+
+.p-shop__address-wrap {
+  margin-top: 27px;
+
+  @include g.mq(xl) {
+    margin-top: 26px;
+  }
+}
+
+.p-shop__address {
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0.48px;
+
+  @include g.mq(xl) {
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.54px;
+  }
+}
+
+.p-shop__access-wrap {
+  margin-top: 10px;
+
+  @include g.mq(xl) {
+    margin-top: 26px;
+  }
+}
+
+.p-shop__access {
+  font-size: 16px;
+  letter-spacing: 0.48px;
+
+  @include g.mq(xl) {
+    font-size: 18px;
+    letter-spacing: 0.54px;
+  }
+}
+
+.p-shop__access__dd {
+  margin-top: -4.5px;
+}
+
+.p-shop__access__dd__text {
+  display: inline;
+  line-height: 1.7;
+
+  @include g.mq(xl) {
+    display: block;
+    line-height: 1;
+  }
+
+  &:nth-child(2) {
+    @include g.mq(xl) {
+      margin-top: 9px;
+    }
+  }
+
+  &:nth-child(3) {
+    @include g.mq(xl) {
+      margin-top: 18px;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.p-shop__access__contents {
+  display: grid;
+  grid-template-columns: 82px 1fr;
+
+  @include g.mq(md) {
+    grid-template-columns: 82px 281px;
+  }
+
+  @include g.mq(xl) {
+    grid-template-columns: 93px 1fr;
+  }
+
+  &:not(:first-child) {
+    margin-top: 11px;
+
+    @include g.mq(xl) {
+      margin-top: 18px;
+    }
+  }
+}
+
+.p-shop__img {
+  max-width: 700px;
+
+  img {
+    aspect-ratio: 343/298;
+    object-fit: cover;
+
+    @include g.mq(lg) {
+      aspect-ratio: 700/500;
+    }
+  }
+}
+
+.p-shop__post-card-wrap {
+  margin-top: 98px;
+
+  @include g.mq(xl) {
+    margin-top: 80px;
+  }
+}
+
+.p-shop__post-card__outer {
+  margin: 0 auto;
+  width: calc(343 / 375 * 100%);
+  max-width: 600px;
+
+  @include g.mq(md) {
+    width: calc(600 / 768 * 100%);
+    max-width: 750px;
+  }
+
+  @include g.mq(lg) {
+    width: calc(750 / 992 * 100%);
+    max-width: 800px;
+  }
+
+  @include g.mq(xl) {
+    width: calc(1146 / 1440 * 100%);
+    max-width: 1146px;
+  }
+}
+
+.p-shop__post-card {
+  background: #fff;
+  box-shadow: 0px 4px 20px 0px rgba(161, 159, 159, 0.6);
+  padding: 18px 10px 113px;
+  position: relative;
+
+  @include g.mq(xl) {
+    padding: 30px 33px 40px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -39px;
+    left: -16px;
+    width: 112px;
+    aspect-ratio: 643/536;
+    z-index: 1;
+    background: url(../img/shop_stamp.avif) no-repeat center / contain;
+
+    @include g.mq(xl) {
+      top: -60px;
+      left: -56px;
+      width: 200px;
+    }
+
+    @include g.mq(xxl) {
+      top: -71px;
+      left: -97px;
+      width: 288px;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 14px;
+    bottom: 39px;
+    aspect-ratio: 313 / 100;
+    width: 284px;
+    background: url(../img/shop_post-foot.svg) no-repeat center / contain;
+
+    @include g.mq(xl) {
+      right: 34px;
+      bottom: 8px;
+      width: 316px;
+    }
+  }
+}
+
+.p-shop__post-card__images {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include g.mq(md) {
+    grid-template-columns: calc(629 / 1079 * 100%) calc(450 / 1079 * 100%);
+  }
+}
+
+.p-shop__post-card__img {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    border: 1px solid #fff;
+  }
+
+  &:first-child {
+    &::before {
+      inset: calc(19 / 430 * 100%) calc(14 / 323 * 100%);
+    }
+
+    img {
+      aspect-ratio: 323/282;
+      object-fit: cover;
+
+      @include g.mq(md) {
+        aspect-ratio: 629/430;
+      }
+    }
+  }
+
+  &:last-child {
+    &::before {
+      inset: calc(19 / 430 * 100%) calc(14 / 323 * 100%);
+    }
+
+    img {
+      aspect-ratio: 323/209;
+      object-fit: cover;
+
+      @include g.mq(md) {
+        aspect-ratio: 450/430;
+      }
+    }
+  }
+}
+
+.p-shop__post-card__container-wrap {
+  margin-top: 27px;
+
+  @include g.mq(xl) {
+    margin: 39px calc(215 / 1080 * 100%) 0 9px;
+  }
+}
+
+.p-shop__post-card__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 7px;
+
+  @include g.mq(xl) {
+    grid-template-columns: 201px 1fr;
+    gap: calc(43 / 856 * 100%);
+  }
+}
+
+.p-shop__post-card__heading {
+  padding-left: 14px;
+  font-family: g.$ff-ac;
+  font-size: 30px;
+  letter-spacing: 1.5px;
+
+  @include g.mq(xl) {
+    padding: 0;
+    font-size: 48px;
+    letter-spacing: 2.4px;
+  }
+}
+
+.p-shop__post-card__body-wrap {
+  @include g.mq(xl) {
+    margin-top: 7.5px;
+  }
+}
+
+.p-shop__post-card__body {
+  margin: 0 1px;
+  padding-left: 14px;
+  color: #4f4f4f;
+  font-size: 16px;
+  line-height: 2.5;
+  background: url(../img/shop_line.svg) repeat 0 0 / 1px 40px;
+
+  @include g.mq(xl) {
+    margin: 0;
+    padding: 0 9px;
+  }
+}

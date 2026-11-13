@@ -1,0 +1,316 @@
+@use "../global" as g;
+
+.p-contact {
+  padding: 64px 0;
+  background: url(../img/contact_bg.avif) no-repeat center / cover;
+
+  @include g.mq(xl) {
+    padding: 130px 0;
+  }
+}
+
+.p-contact__inner {
+  max-width: 425px;
+
+  @include g.mq(sm) {
+    width: calc(489 / 576 * 100%);
+    max-width: 600px;
+  }
+
+  @include g.mq(md) {
+    width: calc(600 / 768 * 100%);
+    max-width: 750px;
+  }
+
+  @include g.mq(lg) {
+    width: calc(750 / 992 * 100%);
+    max-width: 800px;
+  }
+}
+
+.p-contact__container {
+  padding: 67px 0 64px;
+  background: g.$c-ma;
+
+  @include g.mq(xl) {
+    padding: 61px 0 72px;
+  }
+}
+
+.p-contact__contents {
+  margin: 0 auto;
+  width: calc(312 / 343 * 100%);
+
+  @include g.mq(lg) {
+    width: calc(520 / 800 * 100%);
+  }
+}
+
+.p-contact__note-wrap {
+  margin-top: 48px;
+
+  @include g.mq(xl) {
+    margin-top: 32px;
+  }
+}
+
+.p-contact__note {
+  font-size: 16px;
+  letter-spacing: 0.48px;
+  line-height: calc(23 / 16);
+
+  @include g.mq(sm) {
+    text-align: center;
+  }
+}
+
+.p-contact__form-wrap {
+  margin-top: 32px;
+
+  @include g.mq(xl) {
+    margin-top: 51px;
+  }
+}
+
+.p-contact__form {
+}
+
+.p-contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @include g.mq(xl) {
+    gap: 6px;
+  }
+
+  &:not(:first-child) {
+    margin-top: 32px;
+
+    @include g.mq(xl) {
+      margin-top: 35px;
+    }
+  }
+}
+
+.p-contact__field__head {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  @include g.mq(xl) {
+    gap: 16px;
+  }
+}
+
+.p-contact__field__label {
+  font-size: 16px;
+
+  @include g.mq(xl) {
+    font-size: 18px;
+  }
+}
+
+.p-contact__field__tag {
+  display: grid;
+  place-items: center;
+  width: 39px;
+  height: 21px;
+  border-radius: 6px;
+  background: g.$c-ac;
+  color: g.$white;
+  font-size: 12px;
+}
+
+[type="text"],
+[type="email"],
+[type="tel"] {
+  width: 100%;
+  padding: 15.5px 15px;
+  border: 1px solid g.$c-ba;
+  background: g.$white;
+  outline: none;
+
+  @include g.hover-transition {
+    transition: border-color g.$duration g.$timing, box-shadow g.$duration g.$timing;
+  }
+
+  @include g.mq(xl) {
+    padding: 12.5px 22px;
+  }
+
+  &::placeholder {
+    color: #bdbdbd;
+  }
+
+  @include g.hover-active {
+    border: 1px solid g.$c-ac;
+    box-shadow: 0px 0px 4px 0px g.$c-ac;
+  }
+
+  &:focus {
+    border: 1px solid g.$c-ac;
+    box-shadow: 0px 0px 4px 0px g.$c-ac;
+  }
+}
+
+textarea {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 160px;
+  height: 160px;
+  border: 1px solid g.$c-ba;
+  background: g.$white;
+  line-height: calc(23 / 16);
+  padding: 12px 15px;
+  outline: none;
+
+  @include g.hover-transition {
+    transition: border-color g.$duration g.$timing, box-shadow g.$duration g.$timing;
+  }
+
+  @include g.mq(xl) {
+    padding: 12px 22px;
+  }
+
+  &::placeholder {
+    color: #bdbdbd;
+  }
+
+  @include g.hover-active {
+    border: 1px solid g.$c-ac;
+    box-shadow: 0px 0px 4px 0px g.$c-ac;
+  }
+
+  &:focus {
+    border: 1px solid g.$c-ac;
+    box-shadow: 0px 0px 4px 0px g.$c-ac;
+  }
+
+  &.is-invalid {
+    border: 1px solid #f00;
+    box-shadow: 0px 0px 4px 0px #f00;
+  }
+}
+
+.p-contact__field--checkbox {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include g.mq(xl) {
+  }
+}
+
+[type="checkbox"] {
+  width: 42px;
+  height: 30px;
+  clip: rect(0, 0, 0, 0);
+  position: relative;
+  appearance: none;
+  outline: none;
+
+  @include g.active {
+    &::before {
+      border: 1px solid g.$c-ac;
+      box-shadow: 0px 0px 4px 0px g.$c-ac;
+      background: rgba(21, 151, 65, 0.15);
+    }
+  }
+
+  @include g.hover {
+    &::before {
+      border: 1px solid g.$c-ac;
+      box-shadow: 0px 0px 4px 0px g.$c-ac;
+    }
+  }
+
+  &:focus {
+    &::before {
+      border: 1px solid g.$c-ac;
+      box-shadow: 0px 0px 4px 0px g.$c-ac;
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+  }
+
+  &::before {
+    inset: 0 12px 0 0;
+    border: 1px solid g.$c-ba;
+    background: g.$white;
+
+    @include g.hover-transition {
+      transition: border-color g.$duration g.$timing, box-shadow g.$duration g.$timing, background-color g.$duration g.$timing;
+    }
+  }
+
+  &:checked {
+    &::after {
+      inset: 7px 20px 7px 7px;
+      background: url(../img/contact_check.svg) no-repeat center / contain;
+    }
+  }
+}
+
+.p-contact__field__label--checkbox,
+.p-contact__field__privacy-policy-btn {
+  display: grid;
+  align-items: center;
+  height: 30px;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+
+  @include g.mq(xl) {
+    font-size: 18px;
+    letter-spacing: 0.9px;
+  }
+}
+
+.p-contact__field__privacy-policy-btn {
+  color: g.$c-ac;
+  text-decoration-line: underline;
+  @include g.hover-transition {
+    transition: opacity g.$duration g.$timing;
+  }
+
+  @include g.hover-active {
+    opacity: 0.7;
+  }
+}
+
+.p-contact__field--submit {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+[type="submit"] {
+  text-align: center;
+  width: 300px;
+  height: 56px;
+  background: g.$c-ac;
+  color: g.$white;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.9px;
+  @include g.hover-transition {
+    transition: background-color g.$duration g.$timing, opacity g.$duration g.$timing;
+  }
+
+  @include g.mq(xl) {
+    width: 239px;
+  }
+
+  &:disabled {
+    background: #bdbdbd;
+  }
+
+  @include g.hover-active {
+    opacity: 0.7;
+  }
+}
